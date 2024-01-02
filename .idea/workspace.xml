@@ -4,19 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57dbdd99-cd08-46f2-9a47-9742cbc9ed2e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chap03_method_and_api_lecture_source.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/level02/normal/Application1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/level02/normal/Application2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/method/Application1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/method/Application2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/method/Application3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/method/Application4.java" afterDir="false" />
+    <list default="true" id="57dbdd99-cd08-46f2-9a47-9742cbc9ed2e" name="Changes" comment="FIRST COMMIT">
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/method/Application5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/method/Application6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/method/Application7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/method/Application8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/method/Application9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/method/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/package_and_inport/Application1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/package_and_inport/Application2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section03/Math/Application1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section03/Math/Application2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section03/Math/Application3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section04/scanner/Application1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section04/scanner/Application2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section04/scanner/Application3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +52,16 @@
     "Application.Application2.executor": "Run",
     "Application.Application3.executor": "Run",
     "Application.Application4.executor": "Run",
+    "Application.Application5.executor": "Run",
+    "Application.Application6.executor": "Run",
+    "Application.Application7.executor": "Run",
+    "Application.Application8.executor": "Run",
+    "Application.Application9.executor": "Run",
     "Application.com.ohgiraffers.level02.normal.Application1.executor": "Run",
     "Application.com.ohgiraffers.level02.normal.Application2.executor": "Run",
+    "Application.com.ohgiraffers.section04.scanner.Application1.executor": "Run",
+    "Application.com.ohgiraffers.section04.scanner.Application2.executor": "Run",
+    "Application.com.ohgiraffers.section04.scanner.Application3.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -59,13 +70,13 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.com.ohgiraffers.level02.normal.Application2">
+  <component name="RunManager" selected="Application.com.ohgiraffers.section04.scanner.Application3">
     <configuration name="Application2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section01.method.Application2" />
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section03.Math.Application2" />
       <module name="chap03_method_and_api_lecture_source" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ohgiraffers.section01.method.*" />
+          <option name="PATTERN" value="com.ohgiraffers.section03.Math.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,11 +85,11 @@
       </method>
     </configuration>
     <configuration name="Application3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section01.method.Application3" />
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section03.Math.Application3" />
       <module name="chap03_method_and_api_lecture_source" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ohgiraffers.section01.method.*" />
+          <option name="PATTERN" value="com.ohgiraffers.section03.Math.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,12 +97,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section01.method.Application4" />
+    <configuration name="com.ohgiraffers.section04.scanner.Application1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section04.scanner.Application1" />
       <module name="chap03_method_and_api_lecture_source" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ohgiraffers.section01.method.*" />
+          <option name="PATTERN" value="com.ohgiraffers.section04.scanner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.ohgiraffers.level02.normal.Application1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.level02.normal.Application1" />
+    <configuration name="com.ohgiraffers.section04.scanner.Application2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section04.scanner.Application2" />
       <module name="chap03_method_and_api_lecture_source" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ohgiraffers.level02.normal.*" />
+          <option name="PATTERN" value="com.ohgiraffers.section04.scanner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,12 +123,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.ohgiraffers.level02.normal.Application2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.level02.normal.Application2" />
+    <configuration name="com.ohgiraffers.section04.scanner.Application3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section04.scanner.Application3" />
       <module name="chap03_method_and_api_lecture_source" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ohgiraffers.level02.normal.*" />
+          <option name="PATTERN" value="com.ohgiraffers.section04.scanner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,20 +138,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.ohgiraffers.level02.normal.Application2" />
-        <item itemvalue="Application.com.ohgiraffers.level02.normal.Application1" />
-        <item itemvalue="Application.Application4" />
+        <item itemvalue="Application.com.ohgiraffers.section04.scanner.Application3" />
+        <item itemvalue="Application.com.ohgiraffers.section04.scanner.Application2" />
+        <item itemvalue="Application.com.ohgiraffers.section04.scanner.Application1" />
         <item itemvalue="Application.Application3" />
         <item itemvalue="Application.Application2" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -151,6 +155,19 @@
       <option name="presentableId" value="Default" />
       <updated>1703829095115</updated>
     </task>
+    <task id="LOCAL-00001" summary="FIRST COMMIT">
+      <option name="closed" value="true" />
+      <created>1703837707920</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703837707920</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="FIRST COMMIT" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIRST COMMIT" />
   </component>
 </project>
