@@ -19,11 +19,11 @@ public class advanced {
         if (sum>=60){
             if (korean >= 40 && math>=40 && english>=40){
                 System.out.println("합격입니다!");
-            }
+            }else if (korean < 40? math > 40 : english > 40){
+                System.out.println("  " + "의 점수미달로 불합격 입니다.");
             }else if (sum<60){
             System.out.println("평균점수 미달로 불합격입니다.");
-             }else if (korean < 40? math > 40 : english > 40){
-            System.out.println("  " + "의 점수미달로 불합격 입니다.");
+             }
         }
         }
 

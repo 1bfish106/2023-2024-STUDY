@@ -33,7 +33,7 @@ public class A_nestedFor {
         }
     }
 
-    public void printTtiangleStars(){
+    public void printTriangleStars(){
         /*키보드로 정수를 하나 입력 받아 해당 정수만큼 한 행에 "*" 을 행의 번호개씩 출력*/
 
         /*예) 정수 입력 : 5

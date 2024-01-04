@@ -4,31 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fad6b90-5673-4fc6-9736-be7acabb6f81" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chap04-control-flow-lecture-source.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/If/Application1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/If/conditional.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/IfElse/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/IfElse/ifElse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/Switch/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/Switch/switch1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/conditional/level01/Application1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/conditional/level01/advanced.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/conditional/level01/basic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/conditional/level01/hard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/conditional/level01/normal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/ifElseIf/Application1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/ifElseIf/ex_ax.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/ifElseIf/ex_grade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/A_for.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/A_nestedFor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/Application.java" afterDir="false" />
+    <list default="true" id="2fad6b90-5673-4fc6-9736-be7acabb6f81" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/B_while.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/C_doWhlie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section03/breanching/A_break.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section03/breanching/Application1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section03/breanching/B_continue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ohgiraffers/section01/conditional/level01/advanced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/conditional/level01/advanced.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ohgiraffers/section02/A_nestedFor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/A_nestedFor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ohgiraffers/section02/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +45,7 @@
     "Application.com.ohgiraffers.section01.Switch.Application.executor": "Run",
     "Application.com.ohgiraffers.section01.conditional.level01.Application1.executor": "Run",
     "Application.com.ohgiraffers.section02.Application.executor": "Run",
+    "Application.com.ohgiraffers.section03.breanching.Application1.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -75,20 +61,7 @@
       <recent name="com.ohgiraffers.section02" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.ohgiraffers.section01.conditional.level01.Application1">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section01.IfElse.Application" />
-      <module name="chap04-control-flow-lecture-source" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ohgiraffers.section01.If.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.com.ohgiraffers.section03.breanching.Application1">
     <configuration name="Application1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section01.ifElseIf.Application1" />
       <module name="chap04-control-flow-lecture-source" />
@@ -141,13 +114,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.ohgiraffers.section03.breanching.Application1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section03.breanching.Application1" />
+      <module name="chap04-control-flow-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffers.section03.breanching.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.ohgiraffers.section01.conditional.level01.Application1" />
+        <item itemvalue="Application.com.ohgiraffers.section03.breanching.Application1" />
         <item itemvalue="Application.com.ohgiraffers.section02.Application" />
+        <item itemvalue="Application.com.ohgiraffers.section01.conditional.level01.Application1" />
         <item itemvalue="Application.com.ohgiraffers.section01.Switch.Application" />
         <item itemvalue="Application.Application1" />
-        <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -160,6 +146,19 @@
       <option name="presentableId" value="Default" />
       <updated>1704243622207</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1704273892466</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704273892466</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>
