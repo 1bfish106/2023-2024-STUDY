@@ -1,4 +1,4 @@
-package com.ohgiraffers.section01.array;
+package com.ohgiraffers.looping_and_branching.section01.array;
 
 public class Application3 {
 
@@ -31,7 +31,5 @@ public class Application3 {
         for(int i = 0; i < sarr.length; i++){
             System.out.println("sarr[" + i + "] 의 값 : " + sarr[i]);
         }
-
-
     }
 }

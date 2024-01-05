@@ -26,5 +26,11 @@ public class normal {
 
     }
 
+    public void test3(){
+
+
+
+    }
+
 
 }

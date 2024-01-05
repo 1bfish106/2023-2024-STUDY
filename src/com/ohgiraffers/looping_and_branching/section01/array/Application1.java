@@ -1,4 +1,4 @@
-package com.ohgiraffers.section01.array;
+package com.ohgiraffers.looping_and_branching.section01.array;
 
 public class Application1 {
 
