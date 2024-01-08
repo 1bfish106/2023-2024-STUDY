@@ -5,29 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20c5b9cc-169d-4add-8e64-b5222c595f70" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/arrayLevel01/arraylevel2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/arrayLevel01/arraylevel3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/arrayLevel01/basic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/arrayLevel01/basic2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/arrayLevel01/hard1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/arrayLevel01/normal1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/arrayLevel01/normal2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section01/array/Application4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section01/array/Application5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section02/demensional/Application1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section02/demensional/Application2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section02/demensional/Application3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section02/demensional/Application4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section03/copy/Application1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section03/copy/Application2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section03/copy/Application3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section03/copy/Application4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section04/sort/Application1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section04/sort/Application2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section04/sort/Application3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section04/sort/Application4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section04/sort/Application5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section04/sort/Application6.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/level01/normal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/level01/normal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ohgiraffers/section01/array/Application1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section01/array/Application1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ohgiraffers/section01/array/Application2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section01/array/Application2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ohgiraffers/section01/array/Application3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/section01/array/Application3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/arrayLevel01/arraylevel3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ohgiraffers/looping_and_branching/arrayLevel01/arraylevel3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +45,7 @@
     "Application.Application3.executor": "Run",
     "Application.Application4.executor": "Run",
     "Application.Application5.executor": "Run",
+    "Application.Application6.executor": "Run",
     "Application.arraylevel2.executor": "Run",
     "Application.arraylevel3.executor": "Run",
     "Application.basic.executor": "Run",
@@ -80,13 +66,18 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.arraylevel3">
-    <configuration name="arraylevel2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.looping_and_branching.arrayLevel01.arraylevel2" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\정가연\01_JAVA\03_메소드와 api\chap5-array-lecture-source\src\com\ohgiraffers\section04\sort" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Application6">
+    <configuration name="Application1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.looping_and_branching.section04.sort.Application1" />
       <module name="chap5-array-lecture-source" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ohgiraffers.looping_and_branching.arrayLevel01.*" />
+          <option name="PATTERN" value="com.ohgiraffers.looping_and_branching.section04.sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,12 +85,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="arraylevel3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.looping_and_branching.arrayLevel01.arraylevel3" />
+    <configuration name="Application2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.looping_and_branching.section04.sort.Application2" />
       <module name="chap5-array-lecture-source" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ohgiraffers.looping_and_branching.arrayLevel01.*" />
+          <option name="PATTERN" value="com.ohgiraffers.looping_and_branching.section04.sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,12 +98,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="normal1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.looping_and_branching.arrayLevel01.normal1" />
+    <configuration name="Application3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.looping_and_branching.section04.sort.Application3" />
       <module name="chap5-array-lecture-source" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ohgiraffers.looping_and_branching.arrayLevel01.*" />
+          <option name="PATTERN" value="com.ohgiraffers.looping_and_branching.section04.sort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.looping_and_branching.section04.sort.Application6" />
+      <module name="chap5-array-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffers.looping_and_branching.section04.sort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,26 +137,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="normal2222" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.looping_and_branching.arrayLevel01.normal2222" />
-      <module name="chap5-array-lecture-source" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ohgiraffers.looping_and_branching.arrayLevel01.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.arraylevel3" />
-        <item itemvalue="Application.arraylevel2" />
-        <item itemvalue="Application.normal2222" />
+        <item itemvalue="Application.Application6" />
+        <item itemvalue="Application.Application3" />
+        <item itemvalue="Application.Application2" />
+        <item itemvalue="Application.Application1" />
         <item itemvalue="Application.normal2" />
-        <item itemvalue="Application.normal1" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704359856441</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1704449613403</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704449613403</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -26,23 +26,32 @@ public class arraylevel3 {
          * */
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("가로 행의 수를 입력하세요 : ");
-        int first = sc.nextInt();
-        System.out.println("세로 열의 수를 입력하세요 : ");
-        int second = sc.nextInt();
 
-        int[][] arr = new int[5][4];
-        Random random = new Random();
+        while (true) {
+            System.out.println("가로 행의 수를 입력하세요 : ");
+            int first = sc.nextInt();
+            System.out.println("세로 열의 수를 입력하세요 : ");
+            int second = sc.nextInt();
 
-        for(int i = 0; i < arr.length; i++){
-            for(int j = 0; j < arr[i].length; j++){
-                char ch = (char) (random.nextInt(26) + 'A');
-                System.out.print(ch + " ");
+            int[][] array = new int[first][second];
+            if (first < 10 && second < 10) {
+                if (first > 1 && second > 1) {
+                    for (int i = 0; i < array.length; i++) {
+                        Random random = new Random();
+                        for (int j = 0; j < array[i].length; j++) {
+                            char random1 = (char) (random.nextInt(26) + 'A');
+                            System.out.print(random1 + " ");
+                        }
+                    }
+                    System.out.println(" ");
+                }
+                break;
+            } else {
+                System.out.println("반드시 1~10까지의 정수를 입력해야 합니다. 다시 입력하세요.");
+
             }
-            System.out.println();
 
         }
-
     }
-
 }
+
