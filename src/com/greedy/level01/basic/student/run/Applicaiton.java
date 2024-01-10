@@ -33,10 +33,10 @@ public class Applicaiton {
                 System.out.println("계속 추가할겁니까?");
                 char str = sc.next().charAt(0);
                 sc.nextLine();
-                if ( str == 'n' ) {
+                if ( str == 'n' && count < 10 ) {
                     System.out.println("----- 입력 생략 -----");
                     System.out.println(studentDTOS[i].getInformation());
-
+                    return;
                 } else{
 
                 }
