@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec441dd3-149d-4528-b46f-15817ae48e66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chap08-polymorphism-lecture-source.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section01/polymorphism/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section01/polymorphism/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section01/polymorphism/Rabbit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section01/polymorphism/Tiger.java" afterDir="false" />
+    <list default="true" id="ec441dd3-149d-4528-b46f-15817ae48e66" name="Changes" comment="dddd">
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section01/polymorphism/Application2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section01/polymorphism/Application3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section01/polymorphism/Application4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section02/abstractClass/Application5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section02/abstractClass/SmartPhone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section02/abstractClass/product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section03/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section03/interfaceimplements/InterProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffer/section03/interfaceimplements/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -31,9 +32,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2akiAY8nSQDpr6tiERdIii6DSPU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -44,13 +45,18 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Application.executor": "Run",
+    "Application.Application2.executor": "Run",
+    "Application.Application3.executor": "Run",
+    "Application.Application4.executor": "Run",
+    "Application.Application5.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Application5">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ohgiraffer.section01.polymorphism.Application" />
       <module name="chap08-polymorphism-lecture-source" />
@@ -64,9 +70,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffer.section01.polymorphism.Application2" />
+      <module name="chap08-polymorphism-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffer.section01.polymorphism.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffer.section01.polymorphism.Application3" />
+      <module name="chap08-polymorphism-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffer.section01.polymorphism.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffer.section01.polymorphism.Application4" />
+      <module name="chap08-polymorphism-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffer.section01.polymorphism.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffer.section02.abstractClass.Application5" />
+      <module name="chap08-polymorphism-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffer.section02.abstractClass.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
+        <item itemvalue="Application.Application5" />
+        <item itemvalue="Application.Application4" />
+        <item itemvalue="Application.Application3" />
+        <item itemvalue="Application.Application2" />
       </list>
     </recent_temporary>
   </component>
@@ -79,6 +141,19 @@
       <option name="presentableId" value="Default" />
       <updated>1704868836874</updated>
     </task>
+    <task id="LOCAL-00001" summary="dddd">
+      <option name="closed" value="true" />
+      <created>1704878123322</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704878123322</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dddd" />
+    <option name="LAST_COMMIT_MESSAGE" value="dddd" />
   </component>
 </project>
