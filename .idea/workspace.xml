@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c88f1c56-34ea-4c6b-951b-5c1521b82bec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chap12-exception-lecture-source.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/exception/Application1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/exception/Application2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section01/exception/ExceptionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/userexception/Application1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/userexception/Application2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/userexception/Application3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/userexception/exception/MoneyNegative.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/userexception/exception/negativeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/userexception/exception/notEnoughMoney.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/userexception/exception/priceNegative.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section02/userexception/exceptiontest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section03/uses/Application1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section03/uses/Application2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section04/override/SubClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ohgiraffers/section04/override/SuperClass.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2b3npcBS9sDc2eaqgC5dtnxGwiV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application1.executor": "Run",
+    "Application.Application2.executor": "Run",
+    "Application.Application3.executor": "Run",
+    "Application.com.ohgiraffers.section02.userexception.Application1.executor": "Run",
+    "Application.com.ohgiraffers.section02.userexception.Application2.executor": "Run",
+    "Application.com.ohgiraffers.section03.uses.Application1.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ohgiraffers.section02.userexception" />
+      <recent name="com.ohgiraffers.section01.exception" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\정가연\01_JAVA\03_메소드와 api\chap12-exception-lecture-source\src\com\ohgiraffers\section02\userexception" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.com.ohgiraffers.section02.userexception.Application2">
+    <configuration name="Application2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section01.exception.Application2" />
+      <module name="chap12-exception-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffers.section01.exception.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section02.userexception.Application3" />
+      <module name="chap12-exception-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffers.section02.userexception.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.ohgiraffers.section02.userexception.Application1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section02.userexception.Application1" />
+      <module name="chap12-exception-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffers.section02.userexception.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.ohgiraffers.section02.userexception.Application2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section02.userexception.Application2" />
+      <module name="chap12-exception-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffers.section02.userexception.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.ohgiraffers.section03.uses.Application1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.section03.uses.Application1" />
+      <module name="chap12-exception-lecture-source" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffers.section03.uses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.com.ohgiraffers.section02.userexception.Application2" />
+        <item itemvalue="Application.com.ohgiraffers.section03.uses.Application1" />
+        <item itemvalue="Application.Application3" />
+        <item itemvalue="Application.com.ohgiraffers.section02.userexception.Application1" />
+        <item itemvalue="Application.Application2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c88f1c56-34ea-4c6b-951b-5c1521b82bec" name="Changes" comment="" />
+      <created>1705452815574</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705452815574</updated>
+    </task>
+    <servers />
+  </component>
+</project>
