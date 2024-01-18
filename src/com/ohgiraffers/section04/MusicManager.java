@@ -1,12 +1,40 @@
 package com.ohgiraffers.section04;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MusicManager {
 
     /* 음악 목록이 저장 되는 리스트  */
-    private List<MusicDTO> musicList = new ArrayList<>();
+    private List<MusicDTO> musicList;
+    //파일처리를 하면 스태틱은 카운트가 되지않고 그냥 출력됨
+    //파일로드
+    public void fileload(){
+
+        try(ObjectInputStream os = new ObjectInputStream(new FileInputStream("musicList.dat"))){
+            musicList = (List<MusicDTO>) os.readObject();
+        } catch (FileNotFoundException e) {
+            //파일을 못찾았을경우 비어있는 목록을 보여준다.
+          musicList = new ArrayList<>();
+        } catch (IOException e) {
+            musicList = new ArrayList<>();
+        } catch (ClassNotFoundException e){
+            musicList = new ArrayList<>();
+        }
+    }
+
+    //파일저장
+    public void filesave(){
+
+        try(ObjectOutputStream oos= new ObjectOutputStream(new FileOutputStream("musicList.dat"))){
+            oos.writeObject(musicList);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /* 곡 추가 */
     public void addList(MusicDTO music) {

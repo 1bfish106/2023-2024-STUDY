@@ -12,6 +12,9 @@ public class MusicMenu {
 
     public void mainMenu() {
 
+        //파일을 읽어오는 메소드 호출
+        musicManager.fileload();
+
         mainMenu:
         while (true) {
             System.out.println("========== 메뉴 ==========");
@@ -53,6 +56,8 @@ public class MusicMenu {
                     break;
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
+                    //파일저장
+                    musicManager.filesave();
                     break mainMenu;
                 default:
                     System.out.println("잘못 선택하셨습니다. 번호를 다시 입력해주세요.");

@@ -1,6 +1,8 @@
 package com.ohgiraffers.section04;
 
-public class MusicDTO {
+import java.io.Serializable;
+
+public class MusicDTO implements Serializable {
 
     private static int nextId = 1;
 
