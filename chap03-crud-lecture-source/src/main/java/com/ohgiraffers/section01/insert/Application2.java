@@ -28,7 +28,6 @@ public class Application2 {
         String orderableStatus = sc.nextLine().toUpperCase();
 
         /*다른 클래스의 메소드 호출 등에서 값을 뭉쳐서 보내기 위해서 DTO에 담고 전송*/
-
         MenuDTO newMenu = new MenuDTO();
         newMenu.setName(menuName);
         newMenu.setPrice(menuPrice);
