@@ -33,7 +33,7 @@ public class Application4 {
             String query = prop.getProperty("deletecategory");
 
             pstmt = con.prepareStatement(query);
-            pstmt.setString(1, newcategory.getCatename());
+            pstmt.setInt(1, newcategory.getCatecode());
 
             result = pstmt.executeUpdate();
 
@@ -54,4 +54,4 @@ public class Application4 {
 
     }
     }
-}
+
