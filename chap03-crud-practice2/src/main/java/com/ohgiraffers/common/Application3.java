@@ -59,7 +59,7 @@ public class Application3 {
                 System.out.println("카테고리 변경 완료!");
 
             }else{
-                System.out.println("카테고리 변경 실패");
+                System.out.println("카테고리 변경 실패ㅜㅜ");
             }
 
         }
