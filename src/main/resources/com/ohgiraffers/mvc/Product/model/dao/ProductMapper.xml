@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- MenuMapper Interface와 ProductMapper.xml 설정파일 연동
+1. DAO 인터페이스와 동일한 패키지에 위치해야 한다.
+2. DAO 인터페이스의 풀네임을 namespace로 지정해야 한다.
+3. DAO 인터페이스와 XML의 이름이 동일해야 한다.
+4. 작성한 메소드의 이름과 id가 일치하고, 리턴 타입이 일치하는 쿼리문을 모두 작성해야 한다.
+-->
+<mapper namespace="com.ohgiraffers.mvc.Product.model.dao.ProductMapper">
+
+    <select id="selectOneProductByCode" resultType="com.ohgiraffers.mvc.Product.model.dto.ProductDTO">
+        SELECT
+        PRODUCT_CODE,
+        PRODUCT_NAME,
+        ORIGIN_COST,
+        RELEASE_DATE,
+        DISCOUNT_RATE,
+        SALES_QUANTITY,
+        STOCK_QUANTITY,
+        CATEGORY_CODE,
+        PRODUCTION_STATUS
+        FROM
+            product_info
+        WHERE
+        PRODUCT_CODE = #{ productCode }
+    </select>
+
+    <select id="selectAllProduct" resultType="com.ohgiraffers.mvc.Product.model.dto.ProductDTO">
+        SELECT
+            PRODUCT_CODE,
+            PRODUCT_NAME,
+            ORIGIN_COST,
+            RELEASE_DATE,
+            DISCOUNT_RATE,
+            SALES_QUANTITY,
+            STOCK_QUANTITY,
+            CATEGORY_CODE,
+            PRODUCTION_STATUS
+        FROM
+            product_info
+        WHERE
+            PRODUCTION_STATUS = 'Y'
+    </select>
+
+    <insert id="insertProduct">
+        INSERT
+        INTO product_info
+        (
+            PRODUCT_NAME,
+            ORIGIN_COST,
+            RELEASE_DATE,
+            DISCOUNT_RATE,
+            SALES_QUANTITY,
+            STOCK_QUANTITY,
+            CATEGORY_CODE,
+            PRODUCTION_STATUS
+        )
+        VALUES
+        (
+            #{ productName },
+            #{ originCost },
+            #{ releaseDate },
+            #{ discountRate },
+            #{ salesQuantity },
+            #{ stockQuantity },
+            #{ categoryCode },
+            #{ productionStatus }
+
+        )
+    </insert>
+    <update id="updateProduct">
+        UPDATE
+            product_info
+        SET
+            PRODUCT_NAME = #{ productName }
+        WHERE
+            PRODUCT_CODE = #{ productCode }
+    </update>
+
+    <delete id="deleteProduct">
+        DELETE FROM
+            product_info
+        WHERE
+            PRODUCT_CODE = #{ productCode }
+    </delete>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
