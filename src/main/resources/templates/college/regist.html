@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regist</title>
+</head>
+<body>
+
+  <h3>신규 대학 등록</h3>
+
+    <form action="/college/regist" method="post">
+        <label>대학명 : </label><input type="text" name="collegeName"><br>
+        <label>대학코드 : </label>
+        <select name="collegeCode" id="collegeCode">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+        <input type="submit">
+    </form>
+
+    <script>
+        fetch('college/subject').then(res => res.json()).then(data => {
+            console.log(data);
+
+            const $collegeCode = document.querySelector("#collegeCode");
+
+            data.forEach(subject => {
+                const $option = document.createElement('option');
+                $option.textContent = subject.subjectName;
+                $option.value = subject.collegeCode;
+                $collegeCode.appendChild($option);
+            })
+        })
+    </script>
+</body>
+</html>

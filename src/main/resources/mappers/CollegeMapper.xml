@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.crud.college.model.dao.CollegeMapper">
+
+    <select id="findAllCollege" resultType="com.ohgiraffers.crud.college.model.dto.collegeDTO">
+        SELECT
+            college_code,
+            college_name
+        FROM
+            tb_college
+        ORDER BY
+            college_code
+    </select>
+
+    <select id="findSubjectList" resultType="com.ohgiraffers.crud.college.model.dto.subjectDTO">
+        SELECT
+            subject_code,
+            subject_name,
+            college_code
+        FROM
+            tb_subject
+        ORDER BY
+            college_code
+    </select>
+
+    <insert id = "registCollege">
+        INSERT INTO
+
+        tb_college(
+                    college_name
+                     )
+        VALUES
+            ( #{collegeName})
+    </insert>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+

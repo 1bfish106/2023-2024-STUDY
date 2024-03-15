@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>collegeList</title>
+    <script>
+        const successMessage = `[[${successMessage}]]`;
+        if(successMessage) alert(successMessage);
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>대학정보</th>
+        </tr>
+        <tr th:each="college : ${collegeList}">
+            <td th:text="${college.collegeCode}"></td>
+            <td th:text="${college.collegeName}"></td>
+        </tr>
+    </table>
+</body>
+</html>
