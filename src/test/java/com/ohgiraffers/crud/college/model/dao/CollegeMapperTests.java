@@ -1,6 +1,5 @@
 package com.ohgiraffers.crud.college.model.dao;
 
-import com.ohgiraffers.crud.college.model.dto.subjectDTO;
 import com.ohgiraffers.crud.configuration.Chap09CrudApplication;
 import com.ohgiraffers.crud.college.model.dto.collegeDTO;
 import org.junit.jupiter.api.DisplayName;
