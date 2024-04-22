@@ -25,9 +25,11 @@
 
     }
 
-    ReactDOM.createRoot(document.getElementById('root')).render(
-        <ChildrenNodePrinter>텍스트노드</ChildrenNodePrinter>
-    );
+    ReactDOM.createRoot(document.getElementById('root')).render([
+        <ChildrenNodePrinter name="홍길동" phone="010-1234-5678">텍스트노드</ChildrenNodePrinter>,
+        <ChildrenNodePrinter><div>자식노드</div></ChildrenNodePrinter>,
+        <ChildrenNodePrinter><div>1</div><div>2</div></ChildrenNodePrinter>
+    ]);
 </script>
 
 </body>
