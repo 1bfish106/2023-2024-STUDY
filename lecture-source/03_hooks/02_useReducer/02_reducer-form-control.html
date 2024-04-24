@@ -14,7 +14,13 @@
     const { useReducer } = React;
 
     function reducer(state, action) {
-        
+        console.log(state);
+        console.log(action);
+
+        return {
+            ...state,
+            [action.name] : action.value
+        };
     }
 
     function RegistForm() {
