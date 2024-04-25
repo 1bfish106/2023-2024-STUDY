@@ -24,8 +24,16 @@
         const [emojiName, setEmojiName] = useState('');
 
         const onClickHandler = () => {
-            axios.get('https://api.github.com/emojis')
-                .then(res => setImgUrl(res.data[emojiName]));
+            fetch('https://api.github.com/emojis')
+                .then(res => res.json())
+                .then(data => setImgUrl(data[emojiName]));
+
+            // axios.get('https://api.github.com/emojis')
+            //     .then(res => {
+            //         console.log(res);
+            //         console.log(res.data);
+            //         setImgUrl(res.data[emojiName]);
+            //     });
         }
 
         return (
