@@ -44,13 +44,23 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
-    /* 컴포넌트 합성을 위해 트리구조가 복잡해질수록 하위 컴포넌트로 props를 전달하기 위해 drilling이 발생할 수 있다.
-    * => 유지보수 어려움. 코드 가독성 저하.
+    /* Context는 React 컴포넌트 트리 안에 전역적으로 데이터를 공유할 수 있도록 고안 된 방법으로
+    * 중간 엘리먼트들에게 props를 넘겨주지 않아도 되고, 유지 보수도 수월해진다.
+    * 단, 컴포넌트 재사용에 어려움이 생길 수 있다.
     * */
 
-    const { useState } = React;
+    const { useState, createContext, useContext } = React;
 
-    function Header({ isDark }) {
+    /* context 객체 생성
+    * 인자로 defaultValue 전달. 기본 값 없는 경우 null 전달.
+    * */
+    const DarkModeContext = createContext(null);
+
+    function Header() {
+
+        const context = useContext(DarkModeContext);
+        const { isDark } = context;
+
         return (
             <header
                 className="header"
@@ -66,7 +76,10 @@
         );
     }
 
-    function Content({ isDark }) {
+    function Content() {
+
+        const { isDark } = useContext(DarkModeContext);
+
         return (
             <div
                 className="content"
@@ -82,7 +95,10 @@
         );
     }
 
-    function Footer({ isDark, setIsDark }) {
+    function Footer() {
+
+        const { isDark, setIsDark } = useContext(DarkModeContext);
+
         return (
             <footer
                 className="footer"
@@ -99,25 +115,28 @@
         );
     }
 
-    function Page({ isDark, setIsDark }) {
+    function Page() {
         return (
             <div className="page">
-                <Header isDark={ isDark }/>
-                <Content isDark={ isDark }/>
-                <Footer isDark={ isDark } setIsDark={ setIsDark }/>
+                <Header/>
+                <Content/>
+                <Footer/>
             </div>
         );
     }
 
     function App() {
 
-
-
         /* 전체 화면의 다크모드 여부 관리 */
         const [isDark, setIsDark] = useState(false);
 
+        /* Provider는 context를 구독하고 있는 컴포넌트들에게 context의 변화를 알리는 역할을 한다.
+        * value 속성을 이용하여 하위 컴포넌트들에게 값을 전달한다. (전달 받을 수 있는 컴포넌트 수의 제한 X)
+        * */
         return (
-            <Page isDark={isDark} setIsDark={setIsDark} />
+            <DarkModeContext.Provider value={ { isDark, setIsDark } }>
+                <Page/>
+            </DarkModeContext.Provider>
         );
     }
 
