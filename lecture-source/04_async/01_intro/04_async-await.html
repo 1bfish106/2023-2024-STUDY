@@ -29,37 +29,34 @@
             return promise;
         }
 
-        console.log(increase(0));
+        async function run() {
 
-        increase(0)
-            .then(number => {
-                console.log(number);
+            try {
+                let result = await increase(0);
+                console.log(result);
 
-                return increase(number);
-            })
-            .then(number => {
-                console.log(number);
+                result = await increase(result);
+                console.log(result);
 
-                return increase(number);
-            })
-            .then(number => {
-                console.log(number);
+                result = await increase(result);
+                console.log(result);
 
-                return increase(number);
-            })
-            .then(number => {
-                console.log(number);
+                result = await increase(result);
+                console.log(result);
 
-                return increase(number);
-            })
-            .then(number => {
-                console.log(number);
+                result = await increase(result);
+                console.log(result);
 
-                return increase(number);
-            })
-            .catch(e => {
+                result = await increase(result);
+                console.log(result);
+            } catch(e) {
                 console.log(e);
-            })
+            }
+
+
+        }
+
+        run();
     </script>
 </body>
 </html>
