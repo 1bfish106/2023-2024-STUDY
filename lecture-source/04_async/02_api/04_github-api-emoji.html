@@ -6,6 +6,7 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 <div id="root"></div>
@@ -15,32 +16,51 @@
     * useState, props, event, 비동기 통신 이용해서 입력 된 값과 일치하는 emoji를 img에 보여주는 프로그램 작성
     * 일치하는 값이 없을 경우 img를 랜더링하지 않는다.
     * */
-    function SearchBox() {
+
+    const { useState } = React;
+
+    function SearchBox({setImgUrl}) {
+
+        const [emojiName, setEmojiName] = useState('');
+
+        const onClickHandler = () => {
+            axios.get('https://api.github.com/emojis')
+                .then(res => setImgUrl(res.data[emojiName]));
+        }
 
         return (
             <>
                 <input
                     type="text"
                     name="emojiName"
+                    value={emojiName}
+                    onChange={ e => setEmojiName(e.target.value) }
                 />
-                <button>검색</button>
+                <button
+                    onClick={onClickHandler}
+                >
+                    검색
+                </button>
             </>
         );
     }
 
-    function ImageBox() {
+    function ImageBox({imgUrl}) {
 
         return (
-            <img/>
+            imgUrl && <img src={imgUrl} width="200" height="200"/>
         );
     }
 
     function App() {
+
+        const [imgUrl, setImgUrl] = useState('');
+
         return (
             <>
-                <SearchBox/>
+                <SearchBox setImgUrl={setImgUrl}/>
                 <br/>
-                <ImageBox/>
+                <ImageBox imgUrl={imgUrl}/>
             </>
         );
     }
