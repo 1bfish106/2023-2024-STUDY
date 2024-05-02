@@ -4,10 +4,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -39,6 +38,73 @@ public class ResponseEntityTestController {
 
         return new ResponseEntity<>(responseMessage, headers, HttpStatus.OK);
     }
+
+    @GetMapping("/users/{userNo}")
+    public ResponseEntity<ResponseMessage> findUserByNo(@PathVariable int userNo) {
+
+        /* 응답 헤더 설정 */
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(new MediaType("application", "json", StandardCharsets.UTF_8));
+
+        UserDTO foundUser = users.stream().filter(user -> user.getNo() == userNo).toList().get(0);
+
+        /* 응답 데이터 설정 */
+        Map<String, Object> responseMap = new HashMap<>();
+        responseMap.put("user", foundUser);
+        ResponseMessage responseMessage = new ResponseMessage(200, "조회 성공", responseMap);
+
+        return ResponseEntity
+                .ok()
+                .headers(headers)
+                .body(responseMessage);
+
+    }
+
+    @PostMapping("/users")
+    public ResponseEntity<Void> registUser(@RequestBody UserDTO newUser) {
+
+        int lastUserNo = users.get(users.size() - 1).getNo();
+        newUser.setNo(lastUserNo + 1);
+        newUser.setEnrollDate(new Date());
+        users.add(newUser);
+
+        return ResponseEntity
+                .created(URI.create("/entity/users/" + users.get(users.size() - 1).getNo()))
+                .build();
+
+    }
+
+    @PutMapping("/users/{userNo}")
+    public ResponseEntity<Void> modifyUser(@PathVariable int userNo, @RequestBody UserDTO modifyInfo) {
+
+        UserDTO foundUser = users.stream().filter(user -> user.getNo() == userNo).toList().get(0);
+
+        foundUser.setId(modifyInfo.getId());
+        foundUser.setPwd(modifyInfo.getPwd());
+        foundUser.setName(modifyInfo.getName());
+
+        return ResponseEntity
+                .created(URI.create("/entity/users/" + userNo))
+                .build();
+    }
+
+    @DeleteMapping("/users/{userNo}")
+    public ResponseEntity<Void> removeUser(@PathVariable int userNo) {
+
+        UserDTO foundUser = users.stream().filter(user -> user.getNo() == userNo).toList().get(0);
+        users.remove(foundUser);
+
+        return ResponseEntity
+                .noContent()
+                .build();
+
+    }
+
+
+
+
+
+
 
 }
 
