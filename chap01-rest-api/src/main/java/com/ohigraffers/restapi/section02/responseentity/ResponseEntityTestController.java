@@ -1,6 +1,7 @@
 package com.ohigraffers.restapi.section02.responseentity;
 
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +37,7 @@ public class ResponseEntityTestController {
         responseMap.put("users", users);
         ResponseMessage responseMessage = new ResponseMessage(200, "조회 성공", responseMap);
 
-        return null;
+        return new ResponseEntity<>(responseMessage, headers, HttpStatus.OK);
     }
 
 }
