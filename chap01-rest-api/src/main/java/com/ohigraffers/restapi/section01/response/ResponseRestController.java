@@ -1,9 +1,12 @@
 package com.ohigraffers.restapi.section01.response;
 
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -48,8 +51,17 @@ public class ResponseRestController {
         return messageList.stream().collect(Collectors.toMap(Message::getHttpStatusCode, Message::getMessage));
     }
 
+    /* 6. 파일 응답 */
+    @GetMapping(value = "/image", produces = MediaType.IMAGE_PNG_VALUE)
+    public byte[] getImage() throws IOException {
+        return getClass().getResourceAsStream("/images/spring.png").readAllBytes();
+    }
 
-
+    /* 7. ResponseEntity 응답 */
+    @GetMapping("/entity")
+    public ResponseEntity<Message> getEntity() {
+        return ResponseEntity.ok(new Message(123, "hello world!"));
+    }
 
 
 }
