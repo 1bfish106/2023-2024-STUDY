@@ -1,4 +1,4 @@
-package com.ohigraffers.restapi.section01.response;
+package com.ohgiraffers.restapi.section01.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

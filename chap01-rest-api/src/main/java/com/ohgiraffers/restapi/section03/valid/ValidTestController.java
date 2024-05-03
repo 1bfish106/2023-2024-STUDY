@@ -1,4 +1,4 @@
-package com.ohigraffers.restapi.section03.valid;
+package com.ohgiraffers.restapi.section03.valid;
 
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;

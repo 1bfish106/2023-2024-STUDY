@@ -1,4 +1,4 @@
-package com.ohigraffers.restapi;
+package com.ohgiraffers.restapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

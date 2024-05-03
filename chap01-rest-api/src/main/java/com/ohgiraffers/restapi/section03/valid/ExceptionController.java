@@ -1,7 +1,6 @@
-package com.ohigraffers.restapi.section03.valid;
+package com.ohgiraffers.restapi.section03.valid;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
