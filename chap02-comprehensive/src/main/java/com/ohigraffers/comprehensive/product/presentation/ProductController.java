@@ -4,15 +4,13 @@ import com.ohigraffers.comprehensive.common.paging.Pagenation;
 import com.ohigraffers.comprehensive.common.paging.PagingButtonInfo;
 import com.ohigraffers.comprehensive.common.paging.PagingResponse;
 import com.ohigraffers.comprehensive.product.dto.response.AdminProductsResponse;
+import com.ohigraffers.comprehensive.product.dto.response.CustomerProductResponse;
 import com.ohigraffers.comprehensive.product.dto.response.CustomerProductsResponse;
 import com.ohigraffers.comprehensive.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -49,6 +47,14 @@ public class ProductController {
         return ResponseEntity.ok(pagingResponse);
     }
 
+    /* 상품 상세 조회 (고객) */
+    @GetMapping("/products/{productCode}")
+    public ResponseEntity<CustomerProductResponse> getCustomerProduct(@PathVariable final Long productCode) {
+
+        final CustomerProductResponse customerProductResponse = productService.getCustomerProduct(productCode);
+
+        return ResponseEntity.ok(customerProductResponse);
+    }
 
 
 
