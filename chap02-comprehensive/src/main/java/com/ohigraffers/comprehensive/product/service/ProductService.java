@@ -1,5 +1,7 @@
 package com.ohigraffers.comprehensive.product.service;
 
+import com.ohigraffers.comprehensive.common.exception.NotFoundException;
+import com.ohigraffers.comprehensive.common.exception.type.ExceptionCode;
 import com.ohigraffers.comprehensive.product.domain.entity.Product;
 import com.ohigraffers.comprehensive.product.domain.repository.ProductRepository;
 import com.ohigraffers.comprehensive.product.domain.type.ProductStatusType;
@@ -57,7 +59,7 @@ public class ProductService {
     public CustomerProductResponse getCustomerProduct(final Long productCode) {
 
         Product product = productRepository.findByProductCodeAndStatus(productCode, ProductStatusType.USABLE)
-                .orElseThrow();
+                .orElseThrow(() -> new NotFoundException(ExceptionCode.NOT_FOUND_PRODUCT_CODE));
 
         return CustomerProductResponse.from(product);
     }
