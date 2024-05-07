@@ -4,6 +4,7 @@ import com.ohigraffers.comprehensive.product.domain.entity.Product;
 import com.ohigraffers.comprehensive.product.domain.repository.ProductRepository;
 import com.ohigraffers.comprehensive.product.domain.type.ProductStatusType;
 import com.ohigraffers.comprehensive.product.dto.response.AdminProductsResponse;
+import com.ohigraffers.comprehensive.product.dto.response.CustomerProductResponse;
 import com.ohigraffers.comprehensive.product.dto.response.CustomerProductsResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -49,6 +50,16 @@ public class ProductService {
 
         return products.map(AdminProductsResponse::from);
 
+    }
+
+    /* 상품 상세 조회 (고객) */
+    @Transactional(readOnly = true)
+    public CustomerProductResponse getCustomerProduct(final Long productCode) {
+
+        Product product = productRepository.findByProductCodeAndStatus(productCode, ProductStatusType.USABLE)
+                .orElseThrow();
+
+        return CustomerProductResponse.from(product);
     }
 
 
