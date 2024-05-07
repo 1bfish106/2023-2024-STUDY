@@ -23,7 +23,7 @@ public class Product {
     private String productName;
     private Long productPrice;
     private String productDescription;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoryCode")
     private Category category;
     private String productImageUrl;

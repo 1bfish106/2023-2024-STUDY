@@ -3,6 +3,7 @@ package com.ohigraffers.comprehensive.product.presentation;
 import com.ohigraffers.comprehensive.common.paging.Pagenation;
 import com.ohigraffers.comprehensive.common.paging.PagingButtonInfo;
 import com.ohigraffers.comprehensive.common.paging.PagingResponse;
+import com.ohigraffers.comprehensive.product.dto.response.AdminProductsResponse;
 import com.ohigraffers.comprehensive.product.dto.response.CustomerProductsResponse;
 import com.ohigraffers.comprehensive.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +36,18 @@ public class ProductController {
         return ResponseEntity.ok(pagingResponse);
     }
 
+    /* 상품 목록 조회 (관리자) */
+    @GetMapping("/products-management")
+    public ResponseEntity<PagingResponse> getAdminProducts(
+            @RequestParam(defaultValue = "1") final Integer page
+    ) {
 
+        final Page<AdminProductsResponse> products = productService.getAdminProducts(page);
+        final PagingButtonInfo pagingButtonInfo = Pagenation.getPagingButtonInfo(products);
+        final PagingResponse pagingResponse = PagingResponse.of(products.getContent(), pagingButtonInfo);
+
+        return ResponseEntity.ok(pagingResponse);
+    }
 
 
 

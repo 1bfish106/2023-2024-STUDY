@@ -3,6 +3,7 @@ package com.ohigraffers.comprehensive.product.service;
 import com.ohigraffers.comprehensive.product.domain.entity.Product;
 import com.ohigraffers.comprehensive.product.domain.repository.ProductRepository;
 import com.ohigraffers.comprehensive.product.domain.type.ProductStatusType;
+import com.ohigraffers.comprehensive.product.dto.response.AdminProductsResponse;
 import com.ohigraffers.comprehensive.product.dto.response.CustomerProductsResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -40,7 +41,15 @@ public class ProductService {
         return products.map(CustomerProductsResponse::from);
     }
 
+    /* 상품 목록 조회 (관리자) */
+    @Transactional(readOnly = true)
+    public Page<AdminProductsResponse> getAdminProducts(final Integer page) {
 
+        Page<Product> products = productRepository.findByStatusNot(getPageable(page), ProductStatusType.DELETED);
+
+        return products.map(AdminProductsResponse::from);
+
+    }
 
 
 
