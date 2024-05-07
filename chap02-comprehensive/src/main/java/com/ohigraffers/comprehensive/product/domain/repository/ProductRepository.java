@@ -23,6 +23,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     /* 5. 상품 상세 조회 : productCode로 상품 1개 조회, 주문 불가 상품 제외 (고객) */
     Optional<Product> findByProductCodeAndStatus(Long productCode, ProductStatusType productStatusType);
     /* 6. 상품 상세 조회 : productCode로 상품 1개 조회, 주문 불가 상품 포함 (관리자) */
+    @EntityGraph(attributePaths = {"category"})
     Optional<Product> findByProductCodeAndStatusNot(Long productCode, ProductStatusType productStatusType);
 
 

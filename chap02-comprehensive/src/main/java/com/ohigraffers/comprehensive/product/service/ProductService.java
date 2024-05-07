@@ -5,6 +5,7 @@ import com.ohigraffers.comprehensive.common.exception.type.ExceptionCode;
 import com.ohigraffers.comprehensive.product.domain.entity.Product;
 import com.ohigraffers.comprehensive.product.domain.repository.ProductRepository;
 import com.ohigraffers.comprehensive.product.domain.type.ProductStatusType;
+import com.ohigraffers.comprehensive.product.dto.response.AdminProductResponse;
 import com.ohigraffers.comprehensive.product.dto.response.AdminProductsResponse;
 import com.ohigraffers.comprehensive.product.dto.response.CustomerProductResponse;
 import com.ohigraffers.comprehensive.product.dto.response.CustomerProductsResponse;
@@ -62,6 +63,17 @@ public class ProductService {
                 .orElseThrow(() -> new NotFoundException(ExceptionCode.NOT_FOUND_PRODUCT_CODE));
 
         return CustomerProductResponse.from(product);
+    }
+
+    /* 상품 상세 조회 (관리자)
+    * AdminProductResponse로 응답 */
+    @Transactional(readOnly = true)
+    public AdminProductResponse getAdminProduct(final Long productCode) {
+
+        Product product = productRepository.findByProductCodeAndStatusNot(productCode, ProductStatusType.DELETED)
+                .orElseThrow(() -> new NotFoundException(ExceptionCode.NOT_FOUND_PRODUCT_CODE));
+
+        return AdminProductResponse.from(product);
     }
 
 
