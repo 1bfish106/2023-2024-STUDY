@@ -101,9 +101,10 @@ public class ProductService {
         /* 전달 받은 categoryCode를 통해 Category Entity 조회 */
 
         /* findById : tbl_category에 대한 select 구문이 반드시 실행 된다. */
-        //Category category = categoryRepository.findById(productRequest.getCategoryCode());
+        Category category = categoryRepository.findById(productRequest.getCategoryCode())
+                .orElseThrow(() -> new NotFoundException(ExceptionCode.NOT_FOUND_CATEGORY_CODE));
         /* getReferenceById : category가 사용 되지 않는다면 tbl_category에 대한 select 구문이 실행 되지 않는다. */
-        Category category = categoryRepository.getReferenceById(productRequest.getCategoryCode());
+        //Category category = categoryRepository.getReferenceById(productRequest.getCategoryCode());
 
         final Product newProduct = Product.of(
                 productRequest.getProductName(),

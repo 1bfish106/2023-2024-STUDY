@@ -5,6 +5,7 @@ import com.ohgiraffers.comprehensive.common.exception.ServerInternalException;
 import com.ohgiraffers.comprehensive.common.exception.dto.response.ExceptionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -27,6 +28,17 @@ public class ExceptionHandlingController {
         final ExceptionResponse exceptionResponse = ExceptionResponse.of(e.getCode(), e.getMessage());
 
         return ResponseEntity.internalServerError().body(exceptionResponse);
+    }
+
+    /* Valid Exception */
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ExceptionResponse> methodArgumentNotValidException(MethodArgumentNotValidException e) {
+
+        String defaultMessage = e.getBindingResult().getFieldError().getDefaultMessage();
+
+        final ExceptionResponse exceptionResponse = ExceptionResponse.of(9000, defaultMessage);
+
+        return ResponseEntity.badRequest().body(exceptionResponse);
     }
 
 
