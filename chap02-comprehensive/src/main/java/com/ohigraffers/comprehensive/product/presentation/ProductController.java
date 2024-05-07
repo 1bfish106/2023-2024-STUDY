@@ -3,15 +3,20 @@ package com.ohigraffers.comprehensive.product.presentation;
 import com.ohigraffers.comprehensive.common.paging.Pagenation;
 import com.ohigraffers.comprehensive.common.paging.PagingButtonInfo;
 import com.ohigraffers.comprehensive.common.paging.PagingResponse;
+import com.ohigraffers.comprehensive.product.dto.request.ProductCreateRequest;
 import com.ohigraffers.comprehensive.product.dto.response.AdminProductResponse;
 import com.ohigraffers.comprehensive.product.dto.response.AdminProductsResponse;
 import com.ohigraffers.comprehensive.product.dto.response.CustomerProductResponse;
 import com.ohigraffers.comprehensive.product.dto.response.CustomerProductsResponse;
 import com.ohigraffers.comprehensive.product.service.ProductService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.net.URI;
 
 @RestController
 @RequiredArgsConstructor
@@ -66,6 +71,27 @@ public class ProductController {
 
         return ResponseEntity.ok(adminProductResponse);
     }
+
+    /* 상품 등록(관리자) */
+    @PostMapping("/products")
+    public ResponseEntity<Void> save(
+            /* MultipartFile과 JSON을 동시에 전송하는 방법 */
+            @RequestPart @Valid final ProductCreateRequest productRequest,
+            @RequestPart final MultipartFile productImg
+            ) {
+
+        final Long productCode = productService.save(productRequest, productImg);
+
+        return ResponseEntity.created(URI.create("/api/v1/products-management/" + productCode)).build();
+    }
+
+
+
+
+
+
+
+
 
 
 
