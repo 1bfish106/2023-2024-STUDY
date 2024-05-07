@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -36,5 +37,29 @@ public class Product {
     @Enumerated(value = EnumType.STRING)
     private ProductStatusType status = ProductStatusType.USABLE;
 
+    private Product(
+            String productName, Long productPrice, String productDescription,
+            Category category, String productImageUrl, Long productStock
+    ) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productDescription = productDescription;
+        this.category = category;
+        this.productImageUrl = productImageUrl;
+        this.productStock = productStock;
+    }
 
+    public static Product of(
+            final String productName, final Long productPrice, final String productDescription,
+            final Category category, final String productImageUrl, final Long productStock
+    ) {
+        return new Product(
+                productName,
+                productPrice,
+                productDescription,
+                category,
+                productImageUrl,
+                productStock
+        );
+    }
 }

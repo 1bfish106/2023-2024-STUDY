@@ -2,6 +2,7 @@ package com.ohgiraffers.comprehensive.product.service;
 
 import com.ohgiraffers.comprehensive.common.exception.NotFoundException;
 import com.ohgiraffers.comprehensive.common.exception.type.ExceptionCode;
+import com.ohgiraffers.comprehensive.common.util.FileUploadUtils;
 import com.ohgiraffers.comprehensive.product.domain.entity.Category;
 import com.ohgiraffers.comprehensive.product.domain.entity.Product;
 import com.ohgiraffers.comprehensive.product.domain.repository.CategoryRepository;
@@ -13,6 +14,7 @@ import com.ohgiraffers.comprehensive.product.dto.response.AdminProductsResponse;
 import com.ohgiraffers.comprehensive.product.dto.response.CustomerProductResponse;
 import com.ohgiraffers.comprehensive.product.dto.response.CustomerProductsResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,6 +22,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.UUID;
 
 
 @Service
@@ -29,6 +33,11 @@ public class ProductService {
 
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
+
+    @Value("${image.image-url}")
+    private String IMAGE_URL;
+    @Value("${image.image-dir}")
+    private String IMAGE_DIR;
 
     private Pageable getPageable(final Integer page) {
         return PageRequest.of(page - 1, 10, Sort.by("productCode").descending());
@@ -81,9 +90,13 @@ public class ProductService {
         return AdminProductResponse.from(product);
     }
 
+    private String getRandomName() { return UUID.randomUUID().toString().replace("-", ""); }
 
     /* 상품 등록(관리자) */
     public Long save(final ProductCreateRequest productRequest, final MultipartFile productImg) {
+
+        /* 전달 된 파일을 서버의 지정 경로에 저장 */
+        String replaceFileName = FileUploadUtils.saveFile(IMAGE_DIR, getRandomName(), productImg);
 
         /* 전달 받은 categoryCode를 통해 Category Entity 조회 */
 
@@ -97,7 +110,7 @@ public class ProductService {
                 productRequest.getProductPrice(),
                 productRequest.getProductDescription(),
                 category, // 카테고리 엔티티
-                "",   // 저장 된 파일의 url
+                IMAGE_URL + replaceFileName,   // 저장 된 파일의 url
                 productRequest.getProductStock()
         );
 

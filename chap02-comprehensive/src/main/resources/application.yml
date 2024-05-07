@@ -9,6 +9,13 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
 
 server:
   port: 8001
+
+image:
+  image-url: http://localhost:8001/productimgs/
+  image-dir: src/main/resources/static/productimgs
