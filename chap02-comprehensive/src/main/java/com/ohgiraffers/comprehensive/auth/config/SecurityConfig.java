@@ -40,6 +40,9 @@ public class SecurityConfig {
                 .build();
     }
 
+    /* CORS (Cross Origin Resource Sharing) : 교차 출처 자원 공유
+    * 보안 상 웹 브라우저는 다른 도메인에서 서버의 자원을 요청하는 것을 막아 놓았음.
+    * 기본적으로 서버에서 클라이언트를 대상으로 리소스 허용 여부를 결정함. */
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
