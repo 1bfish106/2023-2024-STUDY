@@ -100,7 +100,14 @@ public class ProductController {
 
     }
 
+    /* 상품 삭제 */
+    @DeleteMapping("/products/{productCode}")
+    public ResponseEntity<Void> remove(@PathVariable final Long productCode) {
 
+        productService.remove(productCode);
+
+        return ResponseEntity.noContent().build();
+    }
 
 
 

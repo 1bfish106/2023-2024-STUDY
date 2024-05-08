@@ -150,13 +150,9 @@ public class ProductService {
         );
 
     }
+    
+    public void remove(Long productCode) {
 
 
-
-
-
-
-
-
-
+    }
 }
