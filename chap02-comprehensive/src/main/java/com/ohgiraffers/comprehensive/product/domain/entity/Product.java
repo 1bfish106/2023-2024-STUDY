@@ -62,4 +62,17 @@ public class Product {
                 productStock
         );
     }
+
+    public void modify(String productName, Long productPrice, String productDescription, Category category, Long productStock, ProductStatusType status) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productDescription = productDescription;
+        this.category = category;
+        this.productStock = productStock;
+        this.status = status;
+    }
+
+    public void modifyProductImageUrl(String productImageUrl) {
+        this.productImageUrl = productImageUrl;
+    }
 }
