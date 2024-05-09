@@ -30,7 +30,6 @@ public class SecurityConfig {
     private final PasswordEncoder passwordEncoder;
     private final AuthService authService;
 
-
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
@@ -84,19 +83,19 @@ public class SecurityConfig {
 
     /* 로그인 실패 핸들러 빈 등록 */
     @Bean
-    public LoginFailureHandler loginFailureHandler() {
+    LoginFailureHandler loginFailureHandler() {
         return new LoginFailureHandler();
     }
 
     /* 로그인 성공 핸들러 빈 등록 */
     @Bean
-    public LoginSuccessHandler loginSuccessHandler() {
+    LoginSuccessHandler loginSuccessHandler() {
         return new LoginSuccessHandler();
     }
 
     /* 로그인 시 동작할 CustomFilter Bean 등록 */
     @Bean
-    CustomAuthenticationFilter customAuthenticationFilter() {
+     CustomAuthenticationFilter customAuthenticationFilter() {
 
         CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter();
         /* AuthenticationManager 설정 */

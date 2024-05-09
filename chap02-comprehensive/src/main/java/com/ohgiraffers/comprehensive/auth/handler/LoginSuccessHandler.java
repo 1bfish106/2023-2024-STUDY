@@ -3,6 +3,7 @@ package com.ohgiraffers.comprehensive.auth.handler;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
@@ -10,14 +11,15 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-
+@Slf4j
 public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
-
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         /* 로그인 성공 후 저장 된 인증 객체에서 정보를 꺼낸다. */
         Map<String, Object> memberInfo = getMemberInfo(authentication);
+        log.info("로그인 성공 후 인증 객체에서 꺼낸 정보 : {}", memberInfo);
+
     }
 
     private Map<String, Object> getMemberInfo(Authentication authentication) {

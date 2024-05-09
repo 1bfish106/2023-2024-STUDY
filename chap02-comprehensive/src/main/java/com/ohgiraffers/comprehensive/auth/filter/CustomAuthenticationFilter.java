@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
+@Slf4j
 /* 스프링 시큐리티의 기존 UsernamePasswordAuthenticationFilter를 대체할 CustomFilter */
 public class CustomAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 
@@ -44,11 +46,14 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
 
         /* key 값을 전달해서 Map에서 id, pwd 꺼내기 */
         String memberId = bodyMap.get("memberId");
-        String memberPwd = bodyMap.get("memberPwd");
+        String memberPassword = bodyMap.get("memberPassword");
+
+        log.info("CustomAuthenticationFilter memberId : {}", memberId);
+        log.info("CustomAuthenticationFilter memberPassword : {}", memberPassword);
 
         /* id와 pwd가 설정 된 인증 토큰 생성 */
         UsernamePasswordAuthenticationToken authenticationToken
-                = new UsernamePasswordAuthenticationToken(memberId, memberPwd);
+                = new UsernamePasswordAuthenticationToken(memberId, memberPassword);
 
         /* Authentication Manager에게 Authentication Token 전달 */
         return this.getAuthenticationManager().authenticate(authenticationToken);
