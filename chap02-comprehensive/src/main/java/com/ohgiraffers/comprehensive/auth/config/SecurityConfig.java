@@ -1,8 +1,12 @@
 package com.ohgiraffers.comprehensive.auth.config;
 
+import com.ohgiraffers.comprehensive.auth.filter.CustomAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -56,5 +60,28 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/**", corsConfiguration);
         return source;
     }
+
+    @Bean
+    AuthenticationManager authenticationManager() {
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+//        provider.setPasswordEncoder();
+//        provider.setUserDetailsService();
+        return new ProviderManager(provider);
+    }
+
+    /* 로그인 시 동작할 CustomFilter Bean 등록 */
+    @Bean
+    CustomAuthenticationFilter customAuthenticationFilter() {
+
+        CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter();
+        /* AuthenticationManager 설정 */
+        customAuthenticationFilter.setAuthenticationManager(authenticationManager());
+
+        return customAuthenticationFilter;
+    }
+
+
+
+
 
 }
