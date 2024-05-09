@@ -2,6 +2,7 @@ package com.ohgiraffers.comprehensive.auth.config;
 
 import com.ohgiraffers.comprehensive.auth.filter.CustomAuthenticationFilter;
 import com.ohgiraffers.comprehensive.auth.handler.LoginFailureHandler;
+import com.ohgiraffers.comprehensive.auth.handler.LoginSuccessHandler;
 import com.ohgiraffers.comprehensive.auth.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -87,6 +88,12 @@ public class SecurityConfig {
         return new LoginFailureHandler();
     }
 
+    /* 로그인 성공 핸들러 빈 등록 */
+    @Bean
+    public LoginSuccessHandler loginSuccessHandler() {
+        return new LoginSuccessHandler();
+    }
+
     /* 로그인 시 동작할 CustomFilter Bean 등록 */
     @Bean
     CustomAuthenticationFilter customAuthenticationFilter() {
@@ -96,6 +103,8 @@ public class SecurityConfig {
         customAuthenticationFilter.setAuthenticationManager(authenticationManager());
         /* Login Fail Handler 설정 */
         customAuthenticationFilter.setAuthenticationFailureHandler(loginFailureHandler());
+        /* Login Success Handler 설정 */
+        customAuthenticationFilter.setAuthenticationSuccessHandler(loginSuccessHandler());
 
         return customAuthenticationFilter;
     }
