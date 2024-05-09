@@ -1,5 +1,6 @@
 package com.ohgiraffers.comprehensive.auth.handler;
 
+import com.ohgiraffers.comprehensive.auth.util.TokenUtils;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,6 +20,10 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
         /* 로그인 성공 후 저장 된 인증 객체에서 정보를 꺼낸다. */
         Map<String, Object> memberInfo = getMemberInfo(authentication);
         log.info("로그인 성공 후 인증 객체에서 꺼낸 정보 : {}", memberInfo);
+
+        /* access token과 refresh token 생성 */
+        String accessToken = TokenUtils.createAccessToken(memberInfo);
+        String refreshToken = TokenUtils.createRefreshToken();
 
     }
 
