@@ -51,4 +51,8 @@ public class Member {
                 memberEmail
         );
     }
+
+    public void updateRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
 }

@@ -26,4 +26,8 @@ public class AuthService implements UserDetailsService {
                 .roles(loginDto.getMemberRole().name())
                 .build();
     }
+
+    public void updateRefreshToken(String memberId, String refreshToken) {
+        memberService.updateRefreshToken(memberId, refreshToken);
+    }
 }

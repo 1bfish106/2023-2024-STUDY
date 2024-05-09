@@ -39,7 +39,11 @@ public class MemberService {
         return LoginDto.from(member);
     }
 
+    public void updateRefreshToken(String memberId, String refreshToken) {
 
+        Member member = memberRepository.findByMemberId(memberId)
+                .orElseThrow(() -> new UsernameNotFoundException("해당 아이디가 존재하지 않습니다."));
+        member.updateRefreshToken(refreshToken);
 
-
+    }
 }

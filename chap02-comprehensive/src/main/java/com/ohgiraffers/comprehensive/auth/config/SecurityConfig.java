@@ -90,7 +90,7 @@ public class SecurityConfig {
     /* 로그인 성공 핸들러 빈 등록 */
     @Bean
     LoginSuccessHandler loginSuccessHandler() {
-        return new LoginSuccessHandler();
+        return new LoginSuccessHandler(authService);
     }
 
     /* 로그인 시 동작할 CustomFilter Bean 등록 */

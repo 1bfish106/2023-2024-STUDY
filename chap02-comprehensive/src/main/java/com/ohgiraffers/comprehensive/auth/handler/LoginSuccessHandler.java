@@ -1,9 +1,11 @@
 package com.ohgiraffers.comprehensive.auth.handler;
 
+import com.ohgiraffers.comprehensive.auth.service.AuthService;
 import com.ohgiraffers.comprehensive.auth.util.TokenUtils;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +15,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
+@RequiredArgsConstructor
 public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+
+    private final AuthService authService;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
@@ -26,6 +31,14 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
         String refreshToken = TokenUtils.createRefreshToken();
         log.info("발급 된 accessToken : {}", accessToken);
         log.info("발급 된 refreshToken : {}", refreshToken);
+
+        /* 발급한 refresh token을 DB에 저장해둔다. */
+        authService.updateRefreshToken((String)memberInfo.get("memberId"), refreshToken);
+
+        /* 응답 헤더에 발급 된 토큰을 담는다. */
+        response.setHeader("Access-Token", accessToken);
+        response.setHeader("Refresh-Token", refreshToken);
+        response.setStatus(HttpServletResponse.SC_OK);
 
     }
 
