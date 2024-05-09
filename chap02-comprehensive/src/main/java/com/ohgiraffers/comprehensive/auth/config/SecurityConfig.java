@@ -1,6 +1,9 @@
 package com.ohgiraffers.comprehensive.auth.config;
 
 import com.ohgiraffers.comprehensive.auth.filter.CustomAuthenticationFilter;
+import com.ohgiraffers.comprehensive.auth.handler.LoginFailureHandler;
+import com.ohgiraffers.comprehensive.auth.service.AuthService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -10,15 +13,22 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
+@RequiredArgsConstructor
 @Configuration
 public class SecurityConfig {
+
+    private final PasswordEncoder passwordEncoder;
+    private final AuthService authService;
+
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -40,6 +50,8 @@ public class SecurityConfig {
                     auth.requestMatchers(HttpMethod.POST, "/api/v1/members/signup", "/api/v1/members/login").permitAll();
                     auth.anyRequest().authenticated();
                 })
+                /* 기본적으로 동작하는 로그인 필터 이전에 커스텀 로그인 필터를 설정한다. */
+                .addFilterBefore(customAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .build();
     }
@@ -64,9 +76,15 @@ public class SecurityConfig {
     @Bean
     AuthenticationManager authenticationManager() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-//        provider.setPasswordEncoder();
-//        provider.setUserDetailsService();
+        provider.setPasswordEncoder(passwordEncoder);
+        provider.setUserDetailsService(authService);
         return new ProviderManager(provider);
+    }
+
+    /* 로그인 실패 핸들러 빈 등록 */
+    @Bean
+    public LoginFailureHandler loginFailureHandler() {
+        return new LoginFailureHandler();
     }
 
     /* 로그인 시 동작할 CustomFilter Bean 등록 */
@@ -76,6 +94,8 @@ public class SecurityConfig {
         CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter();
         /* AuthenticationManager 설정 */
         customAuthenticationFilter.setAuthenticationManager(authenticationManager());
+        /* Login Fail Handler 설정 */
+        customAuthenticationFilter.setAuthenticationFailureHandler(loginFailureHandler());
 
         return customAuthenticationFilter;
     }
