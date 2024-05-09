@@ -24,6 +24,8 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
         /* access token과 refresh token 생성 */
         String accessToken = TokenUtils.createAccessToken(memberInfo);
         String refreshToken = TokenUtils.createRefreshToken();
+        log.info("발급 된 accessToken : {}", accessToken);
+        log.info("발급 된 refreshToken : {}", refreshToken);
 
     }
 
