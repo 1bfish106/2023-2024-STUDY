@@ -48,6 +48,7 @@ public class SecurityConfig {
                     auth.requestMatchers(HttpMethod.GET, "/productimgs/**").permitAll();
                     auth.requestMatchers(HttpMethod.GET, "/api/v1/products/**").permitAll();
                     auth.requestMatchers(HttpMethod.POST, "/api/v1/members/signup", "/api/v1/members/login").permitAll();
+                    auth.requestMatchers("/api/v1/products-management/**", "/api/v1/products/**").hasRole("ADMIN");
                     auth.anyRequest().authenticated();
                 })
                 /* 기본적으로 동작하는 로그인 필터 이전에 커스텀 로그인 필터를 설정한다. */
@@ -107,9 +108,5 @@ public class SecurityConfig {
 
         return customAuthenticationFilter;
     }
-
-
-
-
 
 }
