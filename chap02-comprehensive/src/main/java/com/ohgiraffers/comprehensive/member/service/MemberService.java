@@ -5,6 +5,7 @@ import com.ohgiraffers.comprehensive.common.exception.NotFoundException;
 import com.ohgiraffers.comprehensive.member.domain.entity.Member;
 import com.ohgiraffers.comprehensive.member.domain.repository.MemberRepository;
 import com.ohgiraffers.comprehensive.member.dto.request.MemberSignupRequest;
+import com.ohgiraffers.comprehensive.member.dto.response.ProfileResponse;
 import lombok.RequiredArgsConstructor;
 import org.apache.catalina.User;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -56,5 +57,15 @@ public class MemberService {
                 .orElseThrow(() -> new NotFoundException(NOT_FOUND_REFRESH_TOKEN));
 
         return LoginDto.from(member);
+    }
+
+    @Transactional(readOnly = true)
+    public ProfileResponse getProfile(String memberId) {
+
+        Member member = memberRepository.findByMemberId(memberId)
+                .orElseThrow(() -> new UsernameNotFoundException("해당 아이디가 존재하지 않습니다."));
+
+        return ProfileResponse.from(member);
+
     }
 }

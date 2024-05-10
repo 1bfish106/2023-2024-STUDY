@@ -34,6 +34,27 @@ Refresh-Token: Bearer eyJkYXRlIjoxNzE1MzA3MTEzMjkxLCJ0eXBlIjoiand0IiwiYWxnIjoiSF
 GET http://localhost:8001/api/v1/products-management?page=1
 Access-Token: Bearer eyJkYXRlIjoxNzE1MzA3NDMzNDQwLCJ0eXBlIjoiand0IiwiYWxnIjoiSFM1MTIifQ.eyJzdWIiOiJBY2Nlc3NUb2tlbiIsIm1lbWJlclJvbGUiOiJST0xFX1VTRVIiLCJtZW1iZXJJZCI6InVzZXIwMiIsImV4cCI6MTcxNTMxMTAzM30.lN6Qkynhhy4G8se6rV-PiUtRcJPhYil89Fp2LJmNRYUyH19xWDrQ791m-MUIadwaTSlblg5LXPBvvASaHyrxuw
 
+### 프로필 조회
+GET http://localhost:8001/api/v1/members/admin
+Access-Token: Bearer eyJkYXRlIjoxNzE1MzA5NTc3MjcyLCJ0eXBlIjoiand0IiwiYWxnIjoiSFM1MTIifQ.eyJzdWIiOiJBY2Nlc3NUb2tlbiIsIm1lbWJlclJvbGUiOiJST0xFX1VTRVIiLCJtZW1iZXJJZCI6InVzZXIwMiIsImV4cCI6MTcxNTMxMzE3N30.ljsyc1E5X-vdZ12AlDJWoXLcJGeEcFaApxRY0BIUp0Qv_zkXGigMVAuj36qkM9ebpC7D_1BjuuWvkDdjHIQXqw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
