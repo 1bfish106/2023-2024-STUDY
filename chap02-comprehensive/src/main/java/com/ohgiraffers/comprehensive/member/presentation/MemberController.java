@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -44,7 +46,14 @@ public class MemberController {
         return ResponseEntity.ok(profileResponse);
     }
 
+    /* 로그아웃 시 DB 토큰 무효화 */
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(@AuthenticationPrincipal UserDetails userDetails) {
 
+        memberService.updateRefreshToken(userDetails.getUsername(), null);
+
+        return ResponseEntity.ok().build();
+    }
 
 
 
