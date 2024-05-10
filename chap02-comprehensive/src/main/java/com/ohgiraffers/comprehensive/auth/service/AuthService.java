@@ -5,6 +5,9 @@ import com.ohgiraffers.comprehensive.auth.dto.TokenDto;
 import com.ohgiraffers.comprehensive.auth.util.TokenUtils;
 import com.ohgiraffers.comprehensive.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -50,4 +53,27 @@ public class AuthService implements UserDetailsService {
                 "memberRole", loginDto.getMemberRole()
         );
     }
+
+    public void saveAuthentication(String memberId) {
+
+        LoginDto loginDto = memberService.findByMemberId(memberId);
+
+        UserDetails user = User.builder()
+            .username(loginDto.getMemberId())
+            .password(loginDto.getMemberPassword())
+            .roles(loginDto.getMemberRole().name())
+            .build();
+
+        Authentication authentication
+                = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+    }
+
+
+
+
+
+
+
+
 }

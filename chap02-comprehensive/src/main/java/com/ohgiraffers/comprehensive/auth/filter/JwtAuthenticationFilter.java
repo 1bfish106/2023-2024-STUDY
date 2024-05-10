@@ -38,13 +38,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         * */
         String accessToken = TokenUtils.getToken(request.getHeader("Access-Token"));
         if(accessToken != null && TokenUtils.isValidToken(accessToken)) {
-
+            String memberId = TokenUtils.getMemberId(accessToken);
+            authService.saveAuthentication(memberId);
         }
 
-
-
-
-
+        /* access token을 전달한 경우 다음 필터로 진행
+        * 그리고 token 없이 요청이 발생한 경우도 다음 필터로 진행
+        * */
+        filterChain.doFilter(request, response);
 
     }
 }

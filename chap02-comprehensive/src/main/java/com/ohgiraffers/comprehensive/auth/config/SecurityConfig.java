@@ -1,6 +1,9 @@
 package com.ohgiraffers.comprehensive.auth.config;
 
 import com.ohgiraffers.comprehensive.auth.filter.CustomAuthenticationFilter;
+import com.ohgiraffers.comprehensive.auth.filter.JwtAuthenticationFilter;
+import com.ohgiraffers.comprehensive.auth.handler.JwtAccessDeniedHandler;
+import com.ohgiraffers.comprehensive.auth.handler.JwtAuthenticationEntryPoint;
 import com.ohgiraffers.comprehensive.auth.handler.LoginFailureHandler;
 import com.ohgiraffers.comprehensive.auth.handler.LoginSuccessHandler;
 import com.ohgiraffers.comprehensive.auth.service.AuthService;
@@ -17,6 +20,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -53,6 +57,12 @@ public class SecurityConfig {
                 })
                 /* 기본적으로 동작하는 로그인 필터 이전에 커스텀 로그인 필터를 설정한다. */
                 .addFilterBefore(customAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
+                /* 모든 요청에 대해서 토큰을 확인하는 필터 설정 */
+                .addFilterBefore(jwtAuthenticationFilter(), BasicAuthenticationFilter.class)
+                .exceptionHandling(exceptionHandling -> {
+                    exceptionHandling.accessDeniedHandler(jwtAccessDeniedHandler());
+                    exceptionHandling.authenticationEntryPoint(jwtAuthenticationEntryPoint());
+                })
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .build();
     }
@@ -108,5 +118,29 @@ public class SecurityConfig {
 
         return customAuthenticationFilter;
     }
+
+    /* JWT Token 인증 필터 */
+    @Bean
+    JwtAuthenticationFilter jwtAuthenticationFilter() {
+        return new JwtAuthenticationFilter(authService);
+    }
+
+    /* 인증 실패 시 동작 핸들러 */
+    @Bean
+    JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint() {
+        return new JwtAuthenticationEntryPoint();
+    }
+
+    /* 인가 실패 시 동작 핸들러 */
+    @Bean
+    JwtAccessDeniedHandler jwtAccessDeniedHandler() {
+        return new JwtAccessDeniedHandler();
+    }
+
+
+
+
+
+
 
 }

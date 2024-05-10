@@ -24,6 +24,15 @@ public class TokenUtils {
 
     private static final String BEARER = "Bearer ";
 
+    public static String getMemberId(String accessToken) {
+        return Jwts.parserBuilder()
+                .setSigningKey(createSignature())
+                .build()
+                .parseClaimsJws(accessToken)
+                .getBody()
+                .get("memberId").toString();
+    }
+
     @Value("${jwt.secret}")
     public  void setJwtSecretKey(String jwtSecretKey) {
         TokenUtils.jwtSecretKey = jwtSecretKey;
