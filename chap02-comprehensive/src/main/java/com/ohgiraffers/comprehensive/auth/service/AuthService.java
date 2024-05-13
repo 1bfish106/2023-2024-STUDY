@@ -50,7 +50,7 @@ public class AuthService implements UserDetailsService {
     private Map<String,Object> getMemberInfo(LoginDto loginDto) {
         return Map.of(
                 "memberId", loginDto.getMemberId(),
-                "memberRole", loginDto.getMemberRole()
+                "memberRole", "ROLE_" + loginDto.getMemberRole()
         );
     }
 
