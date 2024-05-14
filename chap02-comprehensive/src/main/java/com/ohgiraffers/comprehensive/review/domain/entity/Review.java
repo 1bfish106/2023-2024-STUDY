@@ -19,4 +19,13 @@ public class Review extends BaseEntity {
     private String reviewTitle;
     private String reviewContent;
 
+    private Review(Long orderCode, String reviewTitle, String reviewContent) {
+        this.orderCode = orderCode;
+        this.reviewTitle = reviewTitle;
+        this.reviewContent = reviewContent;
+    }
+
+    public static Review of(Long orderCode, String reviewTitle, String reviewContent) {
+        return new Review(orderCode, reviewTitle, reviewContent);
+    }
 }
