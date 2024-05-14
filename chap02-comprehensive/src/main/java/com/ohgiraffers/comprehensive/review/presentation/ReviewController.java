@@ -3,9 +3,12 @@ package com.ohgiraffers.comprehensive.review.presentation;
 import com.ohgiraffers.comprehensive.auth.type.CustomUser;
 import com.ohgiraffers.comprehensive.common.paging.PagingResponse;
 import com.ohgiraffers.comprehensive.review.dto.request.ReviewCreateRequest;
+import com.ohgiraffers.comprehensive.review.dto.response.ReviewsResponse;
 import com.ohgiraffers.comprehensive.review.service.ReviewService;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -32,8 +35,14 @@ public class ReviewController {
 
     /* 상품별 리뷰 목록 조회 */
     @GetMapping("/products/{productCode}/reviews")
-    public ResponseEntity<PagingResponse> getReviews() {
-        
+    public ResponseEntity<PagingResponse> getReviews(
+            @PathVariable final Long productCode,
+            @RequestParam(defaultValue = "1") final Integer page
+            ) {
+
+        final Page<ReviewsResponse> reviews = reviewService.getReviews(page, productCode);
+
+
         return ResponseEntity.ok(null);
     }
 
