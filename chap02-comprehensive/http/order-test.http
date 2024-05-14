@@ -1,0 +1,13 @@
+### 주문 등록
+POST http://localhost:8001/api/v1/orders
+Content-Type: application/json
+Access-Token: Bearer eyJkYXRlIjoxNzE1NjUwNjY0MTI1LCJ0eXBlIjoiand0IiwiYWxnIjoiSFM1MTIifQ.eyJzdWIiOiJBY2Nlc3NUb2tlbiIsIm1lbWJlcklkIjoidXNlcjAyIiwibWVtYmVyUm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTcxNTY1NDI2NH0.20C405eIWgQZP-4tn1C4s5iXMd8Gq8SwQjy1hHQ_M4Flrh6pBMyk4JAnfB3bZedqfMXhD5w0m-4oPNCL5xZxpQ
+
+{
+  "productCode": 2,
+  "orderPhone": "010-1234-5678",
+  "orderEmail": "hello@gmail.com",
+  "orderReceiver": "받는이",
+  "orderAddress": "받는 주소",
+  "orderAmount": 2
+}

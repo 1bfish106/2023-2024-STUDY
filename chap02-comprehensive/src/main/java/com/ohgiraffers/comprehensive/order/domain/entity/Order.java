@@ -29,12 +29,17 @@ public class Order {
     @CreatedDate
     private LocalDateTime orderDate;
 
+    private Order(Long productCode, Long memberCode, String orderPhone, String orderEmail, String orderReceiver, String orderAddress, Long orderAmount) {
+        this.productCode = productCode;
+        this.memberCode = memberCode;
+        this.orderPhone = orderPhone;
+        this.orderEmail = orderEmail;
+        this.orderReceiver = orderReceiver;
+        this.orderAddress = orderAddress;
+        this.orderAmount = orderAmount;
+    }
 
-
-
-
-
-
-
-
+    public static Order of(Long productCode, Long memberCode, String orderPhone, String orderEmail, String orderReceiver, String orderAddress, Long orderAmount) {
+        return new Order(productCode, memberCode, orderPhone, orderEmail, orderReceiver, orderAddress, orderAmount);
+    }
 }

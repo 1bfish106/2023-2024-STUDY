@@ -19,7 +19,15 @@ public class OrderService {
 
         updateStock(orderRequest.getProductCode(), orderRequest.getOrderAmount());
 
-        final Order newOrder = Order.of();
+        final Order newOrder = Order.of(
+                orderRequest.getProductCode(),
+                memberCode,
+                orderRequest.getOrderPhone(),
+                orderRequest.getOrderEmail(),
+                orderRequest.getOrderReceiver(),
+                orderRequest.getOrderAddress(),
+                orderRequest.getOrderAmount()
+        );
 
         orderRepository.save(newOrder);
     }
