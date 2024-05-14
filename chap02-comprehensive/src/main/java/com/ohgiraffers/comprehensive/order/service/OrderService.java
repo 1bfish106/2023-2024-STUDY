@@ -4,8 +4,13 @@ import com.ohgiraffers.comprehensive.common.exception.NotFoundException;
 import com.ohgiraffers.comprehensive.order.domain.entity.Order;
 import com.ohgiraffers.comprehensive.order.domain.repository.OrderRepository;
 import com.ohgiraffers.comprehensive.order.dto.request.OrderCreateRequest;
+import com.ohgiraffers.comprehensive.order.dto.response.OrdersResponse;
 import com.ohgiraffers.comprehensive.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,5 +47,14 @@ public class OrderService {
     public void verifyOrdered(Long orderCode, Long memberCode) {
         if(!orderRepository.existsByOrderCodeAndMemberCode(orderCode, memberCode))
             throw new NotFoundException(NOT_FOUND_VALID_ORDER);
+    }
+    private Pageable getPageable(Integer page) {
+        return PageRequest.of(page - 1, 10, Sort.by("orderCode").descending());
+    }
+
+    @Transactional(readOnly = true)
+    public Page<OrdersResponse> getOrders(Integer page, Long memberCode) {
+
+        return orderRepository.findByMemberCode(getPageable(page), memberCode);
     }
 }

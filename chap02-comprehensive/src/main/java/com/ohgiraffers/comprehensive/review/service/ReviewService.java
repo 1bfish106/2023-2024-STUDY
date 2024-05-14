@@ -64,9 +64,10 @@ public class ReviewService {
     * => 조회 전용 쿼리를 사용해서 한 번의 쿼리로 필요한 데이터를 로딩한다.
     *    쿼리가 복잡하거나 SQL에 특화 된 기능을 사용해야 한다면 조회만 MyBatis를 사용하는 경우도 있다.
     * */
+    @Transactional(readOnly = true)
     public Page<ReviewsResponse> getReviews(Integer page, Long productCode) {
 
-        return reviewRepository.findByProductCode(getPageable(page),productCode);
+        return reviewRepository.findByProductCode(getPageable(page), productCode);
     }
 
     private Pageable getPageable(Integer page) {

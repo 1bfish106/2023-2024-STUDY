@@ -1,6 +1,8 @@
 package com.ohgiraffers.comprehensive.review.presentation;
 
 import com.ohgiraffers.comprehensive.auth.type.CustomUser;
+import com.ohgiraffers.comprehensive.common.paging.Pagenation;
+import com.ohgiraffers.comprehensive.common.paging.PagingButtonInfo;
 import com.ohgiraffers.comprehensive.common.paging.PagingResponse;
 import com.ohgiraffers.comprehensive.review.dto.request.ReviewCreateRequest;
 import com.ohgiraffers.comprehensive.review.dto.response.ReviewsResponse;
@@ -41,9 +43,10 @@ public class ReviewController {
             ) {
 
         final Page<ReviewsResponse> reviews = reviewService.getReviews(page, productCode);
+        final PagingButtonInfo pagingButtonInfo = Pagenation.getPagingButtonInfo(reviews);
+        final PagingResponse pagingResponse = PagingResponse.of(reviews.getContent(), pagingButtonInfo);
 
-
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(pagingResponse);
     }
 
 

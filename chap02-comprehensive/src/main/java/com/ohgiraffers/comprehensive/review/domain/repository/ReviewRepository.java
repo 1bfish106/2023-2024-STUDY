@@ -12,7 +12,7 @@ public interface ReviewRepository extends JpaRepository <Review, Long>{
     boolean existsByOrderCodeAndStatus(Long orderCode, StatusType statusType);
 
     @Query(
-            "select new com.ohgiraffers.comprehensive.review.dto.response.ReviewsResponse() " +
+            "select new com.ohgiraffers.comprehensive.review.dto.response.ReviewsResponse(r, p, m) " +
                     "from Review r join Order o on r.orderCode = o.orderCode " +
                     "join Product p on p.productCode = o.productCode " +
                     "join Member m on m.memberCode = o.memberCode " +
