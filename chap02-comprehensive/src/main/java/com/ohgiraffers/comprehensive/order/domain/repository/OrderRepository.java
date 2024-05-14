@@ -4,4 +4,5 @@ import com.ohgiraffers.comprehensive.order.domain.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
+    boolean existsByOrderCodeAndMemberCode(Long orderCode, Long memberCode);
 }

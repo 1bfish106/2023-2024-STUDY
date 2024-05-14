@@ -1,5 +1,6 @@
 package com.ohgiraffers.comprehensive.order.service;
 
+import com.ohgiraffers.comprehensive.common.exception.NotFoundException;
 import com.ohgiraffers.comprehensive.order.domain.entity.Order;
 import com.ohgiraffers.comprehensive.order.domain.repository.OrderRepository;
 import com.ohgiraffers.comprehensive.order.dto.request.OrderCreateRequest;
@@ -7,6 +8,8 @@ import com.ohgiraffers.comprehensive.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import static com.ohgiraffers.comprehensive.common.exception.type.ExceptionCode.NOT_FOUND_VALID_ORDER;
 
 @Service
 @RequiredArgsConstructor
@@ -34,5 +37,10 @@ public class OrderService {
 
     private void updateStock(Long productCode, Long orderAmount) {
         productService.updateStock(productCode, orderAmount);
+    }
+
+    public void verifyOrdered(Long orderCode, Long memberCode) {
+        if(!orderRepository.existsByOrderCodeAndMemberCode(orderCode, memberCode))
+            throw new NotFoundException(NOT_FOUND_VALID_ORDER);
     }
 }
