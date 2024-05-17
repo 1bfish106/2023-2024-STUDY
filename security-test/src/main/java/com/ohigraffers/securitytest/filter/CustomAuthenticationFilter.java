@@ -40,8 +40,8 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
         Map<String, String> bodyMap = objectMapper.readValue(body, Map.class);
 
         /* 알맞은 내용 작성 */
-        String username = bodyMap.get("");
-        String password = bodyMap.get("");
+        String username = bodyMap.get("username");
+        String password = bodyMap.get("password");
 
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
 
