@@ -1,0 +1,183 @@
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.more_bg {
+    background-color: #7B83CC;
+    height: 100vh;
+}
+.more_wh {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.big-bg{width: 1440px;
+    position: relative;
+}
+.more-page {
+    width: 295px;
+    height: 25px;
+    left: 1051px;
+    top: 27px;
+    position: absolute;
+}
+
+.more-nav {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.more-nav li {
+
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+    list-style: none;
+    text-decoration: none;
+    transition: color 0.3s; /* 색깔 변경에 트랜지션 추가 */
+
+}
+
+.more-nav li:hover{
+    color: red;
+}
+
+
+.more-nav li:first-child {
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.more-nav li:nth-child(2){
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+
+}
+
+.more-nav li:nth-child(3){
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+    margin-right: -50px;
+
+}
+
+.more-nav li:nth-child(4){
+    width: 41px;
+    height: 40px;
+    border-radius: 282px;
+    position: relative;
+    top: -6.5px;
+    right: -50px;
+}
+
+.more-name {
+    width: 199px;
+    height: 74px;
+    left: 37px;
+    top: 30px;
+    position: absolute;
+    color: white;
+    font-size: 64px;
+    font-family: Black Han Sans;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.more-ment{
+    width: 720px;
+    height: 67px;
+    left: 37px;
+    top: 128px;
+    position: absolute;
+    color: black;
+    font-size: 64px;
+    font-family: Black Han Sans;
+    font-weight: 400;
+
+}
+
+.location{
+    width: 600px;
+    height: 261px;
+    left: 598px;
+    top: 277px;
+    position: absolute
+}
+
+.combined-text {
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.study-1, .study-2 {
+    font-size: 64px;
+    display: inline; /* 인라인 요소로 설정하여 한 줄에 나타나게 함 */
+}
+
+.study-1 {
+    color: black;
+}
+
+.study-2 {
+    color: #FF0000;
+}
+
+.license{
+    color: white;
+    font-size: 40px;
+    font-family: Black Han Sans;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.experience {
+    color: black;
+    font-size: 64px;
+    font-family: Black Han Sans;
+    font-weight: 400;
+    word-wrap: break-word
+
+}
+
+.experience2 {
+    color: white;
+    font-size: 40px;
+    font-family: Black Han Sans;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.img1 {
+    width: 237px;
+    height: 235px;
+    left: 0;
+    top: 300px;
+    position: absolute;
+    z-index: 2;
+}
+
+.img2 {
+    width: 232px;
+    height: 237px;
+    left: 0;
+    top: 620px;
+    position: absolute;
+    z-index: 2;
+}

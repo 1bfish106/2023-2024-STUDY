@@ -1,0 +1,132 @@
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.about_bg {
+    background-color: #7B83CC;
+    padding-bottom: 100px;
+}
+
+.about_wh {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.big-bg{width: 1440px;
+    position: relative;
+    z-index: 1;
+
+}
+
+.about{
+    color: white;
+    font-size: 64px;
+    font-family: Black Han Sans;
+    font-weight: 400;
+    word-wrap: break-word;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.rectangle{
+    width: 1155px;
+    height: 734px;
+    background: rgba(217, 217, 217, 0.12);
+    border: 1px white solid;
+    margin: 0 auto;
+    padding: 200px 40px;
+    margin-top: 30px;
+}
+.rectangleWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.about-img{
+    width: 50px;
+    height: 20px;
+    left: 163px;
+    top: 400px;
+    border-radius: 10%;
+    position: absolute;
+    z-index: 2;
+}
+
+.about-page {
+    width: 295px;
+    height: 25px;
+    left: 1051px;
+    top: 27px;
+    position: absolute;
+}
+
+.about-nav {
+    display: flex;
+    justify-content: space-between;
+}
+.about-nav li a:hover {
+    color: red;
+}
+.about-nav li {
+
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+    list-style: none;
+    text-decoration: none;
+    transition: color 0.3s;
+
+}
+
+.about-nav li:first-child {
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.about-nav li:nth-child(2){
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+
+}
+
+.about-nav li:nth-child(3){
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+    margin-right: -50px;
+
+}
+
+.about-nav li:nth-child(4){
+    width: 41px;
+    height: 40px;
+    border-radius: 282px;
+    position: relative;
+    top: -6.5px;
+    right: -50px;
+}
+
+.about-line {
+    color: white;
+    font-size: 20px;
+    font-family: Black Han Sans;
+    font-weight: 400;
+    word-wrap: break-word
+}
+
